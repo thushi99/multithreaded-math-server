@@ -27,7 +27,7 @@ class MathServerCommunicationThread(Thread):
 
     def run(self):
         print("{} Connected with back port {}".format(self.addr[0], self.addr[1]))
-        self.conn.sendall("Multi Threaded Math Server developed by Thushitharan\n\nGive any Math expressions, and I will answer you :)\n\n$".encode())
+        self.conn.sendall("    __  ___        __   __       _____                               \n   /  |/  /____ _ / /_ / /_     / ___/ ___   _____ _   __ ___   _____\n  / /|_/ // __ `// __// __ \    \__ \ / _ \ / ___/| | / // _ \ / ___/\n / /  / // /_/ // /_ / / / /   ___/ //  __// /    | |/ //  __// /    \n/_/  /_/ \__,_/ \__//_/ /_/   /____/ \___//_/     |___/ \___//_/     \n\tMulti Threaded Math Server developed by Thushitharan\n\n\tGive any Math expressions, and I will answer you :)\n\n$".encode())
 
         p = Popen(['bc'], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         output = ProcessOutputThread(p, self.conn)
